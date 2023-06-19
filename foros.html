@@ -76,159 +76,153 @@
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
 
-    <a href="Home.html" class="get-started-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="ali" >Iniciar Sesión</a>
-    <a href="courses.html" class="get-started-btn" data-bs-toggle="modal" data-bs-target="#modalcito">Registrarme</a>
+    <a class="get-started-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="ali" >Iniciar Sesión</a>
+    <a class="get-started-btn" data-bs-toggle="modal" data-bs-target="#modalRegistro">Registrarme</a>
 
     <!-- Button trigger modal -->
 </div>
 
 </header><!-- End Header -->
 <!-- Modal de inicio de sesion -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">
-        <img src="Images/Iconoverde.png" id="img" ></a>
-        <h4 class="logo me-auto"><a href="landing.html"> CONFIAPP</a></h4></h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <form action="Home.html">
-        <div class="mb-3">
-          <label class="form-label">Tipo de documento</label>
-          <select class="form-select" aria-label="Default select example">
-            <option ></option>
-            <option value="1">Cédula de Ciudadanía</option>
-            <option value="2">Tarjeta de Identidad</option>
-            <option value="3">Registro Civil</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Número de documento</label>
-          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required maxlength="10" minlength="7">
-          <div id="emailHelp" class="form-text">Nunca compartiremos su información personal con nadie más.</div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" required maxlength="10" minlength="7">
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-          <label class="form-check-label" for="exampleCheck1">Verificado</label>
-        </div>
-        <div id="centrar">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary" id="send">Ingresar</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img src="Images/Iconoverde.png" id="img" ></a>
+          <h4 class="logo me-auto"><a href="landing.html"> CONFIAPP</a></h4></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      </form>
-      
-    </div>
-    <div class="modal-footer">
-      
-    
-    </div>
-  </div>
-</div>
-</div>  
-
-<!-- fin del Modal de inicio de sesion -->
-
-
-
-  <!-- Modal de hacer el registro -->
-  <div class="modal fade" id="modalcito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">
-            <img src="Images/Iconoverde.png" id="img" ></a>
-            <h4 class="logo me-auto"><a href="landing.html">Regístro CONFIAPP</a></h4></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-  
-          <form action="Home.html" >
-          <div class="mb-3">
-            <label class="form-label">Nombres completos</label>
-            <input type="text" class="form-control" maxlength="20" required>
-          </div>
-  
-          <div class="mb-3">
-            <label class="form-label">Apellidos completos</label>
-            <input type="text" class="form-control" maxlength="20" required>
-          </div>
-  
+      <div class="modal-body">
+        <form action="Home.html" onsubmit="return validacion()">
           <div class="mb-3">
             <label class="form-label">Tipo de documento</label>
-            <select class="form-select" aria-label="Default select example">
-              <option ></option>
+            <select class="form-select" aria-label="Default select example" required>
               <option value="1">Cédula de Ciudadanía</option>
-              <option value="2">Cédula de Extranjería</option>
+              <option value="2">Cedula de Extranjería</option>
+              <option value="3">Pasaporte</option>
             </select>
           </div>
-  
           <div class="mb-3">
-            <label class="form-label">Número de documento</label>
-            <input type="number" class="form-control" maxlength="10" >
+            <label for="exampleInputEmail1" class="form-label">Número de documento</label>
+            <input type="number" class="form-control" id="inicioDocumento" aria-describedby="emailHelp" required maxlength="10" minlength="7">
+            <div id="emailHelp" class="form-text">Nunca compartiremos su información personal con nadie más.</div>
           </div>
-  
-          <div class="mb-3">
-            <label class="form-label">Rol que ocupa</label>
-            <select class="form-select" aria-label="Default select example">
-              <option ></option>
-              <option value="1">Padre de familia</option>
-              <option value="2">Madre de familia</option>
-              <option value="2">Tutor responsable</option>
-            </select>
-          </div>
-  
-          <div class="mb-3">
-            <label class="form-label">Fecha de nacimiento</label>
-            <input type="date" class="form-control" max="2004-12-31" >
-            <div id="emailHelp" class="form-text">Debes ser mayor de 18 años.</div>
-          </div>
-  
-  
-  
-  
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required  minlength="8">
+            <input type="password" class="form-control" id="inicioContraseña"  maxlength="10" minlength="7" required>
           </div>
-          
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required  minlength="8">
-          </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-          <div class="mb-3 form-check">
+          <!-- <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-            <label class="form-check-label" for="exampleCheck1" >Acepto todos los términos y condiciones.</label>
-          </div>
-  
-  
-  
+            <label class="form-check-label" for="exampleCheck1">Verificado</label>
+          </div> -->
           <div id="centrar">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" id="send">Registrarme</button>
-          </div>
-        </form>
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
+          <button type="submit" class="btn btn-primary" id="enviarInicio">Ingresar</button>
+          <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalRegistro">Regístrate</a>
         </div>
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        
+      
       </div>
     </div>
   </div>
-  
-  
-  <!--Aqui TERMINA  el modal de registro -->
+  </div>  
+<!-- fin del Modal de inicio de sesion --> 
+
+
+<!-- Modal de hacer el registro -->
+  <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <img src="Images/Iconoverde.png" id="img" ></a>
+          <h4 class="logo me-auto"><a href="landing.html">Regístro CONFIAPP</a></h4></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form action="Home.html" >
+        <div class="mb-3">
+          <label class="form-label">Nombres completos</label>
+          <input type="text" class="form-control" maxlength="20" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Apellidos completos</label>
+          <input type="text" class="form-control" maxlength="20" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Tipo de documento</label>
+          <select class="form-select" aria-label="Default select example" required>
+            <option value="1">Cédula de Ciudadanía</option>
+            <option value="2">Cédula de Extranjería</option>
+            <option value="3">Pasaporte</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Número de documento</label>
+          <input type="number" class="form-control" maxlength="10" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Rol que ocupa</label>
+          <select class="form-select" aria-label="Default select example" required>
+            <option value="1">Padre de familia</option>
+            <option value="2">Madre de familia</option>
+            <option value="2">Tutor responsable</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" max="2004-12-31" required>
+          <div id="emailHelp" class="form-text">Debes ser mayor de 18 años.</div>
+        </div>
+
+
+
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="registroPassword" required  minlength="8">
+        </div>
+        
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
+          <input type="password" class="form-control" id="registroConfirmarPassword" required  minlength="8">
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="checkRegistro" required>
+          <label class="form-check-label" for="exampleCheck1" >Acepto todos los términos y condiciones.</label>
+        </div>
+
+
+
+        <div id="centrar">
+          <button type="submit" class="btn btn-primary" id="enviarRegistro">Registrarme</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  </div>
+<!--Aqui TERMINA  el modal de registro -->
 
   <main id="main">
 
@@ -421,7 +415,7 @@
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">Adso  2556678 / JDC</a>
+          Designed by <a href="https://www.sena.edu.co/es-co/Paginas/default.aspx">ADSO  2556678 / ConfiApp</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -449,7 +443,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+  <script src="assets/js/principal.js"></script>
+
 
 </body>
 
