@@ -1,9 +1,13 @@
-/////Validar no nulo, tamaño mayor a 0 y espacios en blanco del modal inicio
-let user = document.getElementById("inicioDocumento").value;
-let pass = document.getElementById("inicioContraseña").value;
+let user, pass;
+
+const usuario = 2556678;
+const contraseña = 'adso2023';
 
 function validacion(){
 
+/////Validar no nulo, tamaño mayor a 0 y espacios en blanco del modal inicio
+user = document.getElementById('inicioDocumento').value;
+pass = document.getElementById('inicioContraseña').value;
 //// || (pass == null || pass.length == 0 || /^\s+$/.test(pass))
 
     if(user || pass == null || user.length  || pass.length == 0 || /^\s+$/.test(user) || /^\s+$/.test(pass)) {
@@ -23,15 +27,14 @@ function validacion(){
 
 function inicio(user, pass) {
   
-    const usuario = "adso2556678";
-    const contraseña = "adso2023";
-  
     if (usuario == user && contraseña == pass) {
-      alert("Inicio de sesión exitoso.")
-      console.log(`Bienvenido ${usuario}.`);
-      window.open("Home.html", "_self");   
+        alert("Inicio de sesión exitoso.")
+        console.log(`Bienvenido ${usuario}.`);
+        window.open("Home.html", "_self");   
   
     } else {
       alert("Usuario o contraseña inválido");
+        console.log(user);
+        console.log(pass);
     }
 }
