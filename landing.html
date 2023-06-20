@@ -53,11 +53,11 @@
       <!-- <a href="landing.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="active" href="landing.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="tutores.html">Tutores</a></li>
-          <li><a href="foros.html">Foros</a></li>
+        <ul class="menu">
+          <li><a  class="active" href="landing.html">Inicio</a></li>
+          <li><a  href="nosotros.html">Nosotros</a></li>
+          <li><a  href="tutores.html">Tutores</a></li>
+          <li><a  href="foros.html">Foros</a></li>
           
 
 
@@ -97,13 +97,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="Home.html" onsubmit="return validacion()">
+        <form action="Home.html">
           <div class="mb-3">
             <label class="form-label">Tipo de documento</label>
             <select class="form-select" aria-label="Default select example" required>
               <option value="1">Cédula de Ciudadanía</option>
               <option value="2">Cedula de Extranjería</option>
               <option value="3">Pasaporte</option>
+              
             </select>
           </div>
           <div class="mb-3">
@@ -115,13 +116,14 @@
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="inicioContraseña"  maxlength="10" minlength="7" required>
           </div>
+
           <!-- <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
             <label class="form-check-label" for="exampleCheck1">Verificado</label>
           </div> -->
           <div id="centrar">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
-          <button type="submit" class="btn btn-primary" id="enviarInicio">Ingresar</button>
+          <button type="submit" class="btn btn-primary" id="enviarInicio" >Ingresar</button>
           <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalRegistro">Regístrate</a>
         </div>
         </form>

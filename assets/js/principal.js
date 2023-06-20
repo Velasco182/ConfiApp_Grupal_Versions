@@ -1,82 +1,119 @@
-// Aqui trabajaremos los cambios de los 3 perfiles con ( prompt IF / ELSE ).
+// <!-- ======= Aqui trabajaremos los cambios de los 3 perfiles con ( Switch ) ======= -->
 
 
-// <!-- ======= Ingreso de número con prompt ======= -->
+// <!-- ======= Inicializar las variables que se van a usar  ======= -->
 
-let ingreso = parseInt(prompt("DIGITA UN NÚMERO DEL 1 AL 3"));
 
-if (ingreso < 1 || ingreso >3){
-    alert("Tu número no cumple el rango de 1 a 3");
-}
 
-// if (ingreso !== parseInt){
-//     alert("Necesito un número entero, no letras");
-// }
+// 
 
-// <!-- ======= Ingreso 1 - TUTOR ======= -->
 
-if(ingreso == 1){
+let inicio;
+let tutores ;
+let rutasGuardadas ;
+let miMenor ;
+let imgfondo ;
+let registrate ;
+
+inicio = document.getElementById('inicio');
+tutores = document.getElementById('tutores');
+rutasGuardadas = document.getElementById('rutasGuardadas');
+miMenor = document.getElementById('miMenor');
+imgfondo = document.getElementById('hero');
+registrate = document.getElementById('registrate');
+
+let user, pass;
+
+function comenzar(user){ 
+
+user = document.getElementById('inicioDocumento').value;
+pass = document.getElementById('inicioContraseña').value;
+user.toString();
+console.log(user);
+console.log(pass);
+
+switch(user){
+    case "2556678":
+
+        // alert("Bienvenido Tutor");
+        console.log("Bienvenido Tutor")
+        document.querySelector('.container h1').textContent = "WELCOME TUTOR";
+        inicio.textContent   =    'Inicio';
+        tutores.textContent =    'Tutores';
+        rutasGuardadas.textContent  =    'Rutas guardadas';
+        miMenor.textContent    =    'Menor a cargo';
+    
+        registrate.remove('registrate');
 
     
-    document.querySelector('.').textContent = "WELCOME TUTOR";
-    console.log (navegacion.children[0].textContent = '');
-    console.log (navegacion.children[1].textContent = 'Menores');
-    console.log (navegacion.children[2].textContent = 'Rutas');
-    console.log (navegacion.children[3].textContent = 'Seguimiento');
+        break;
+        
+    case "2":
+        // alert("Bienvenido Adolecente");
+        console.log("Bienvenido Menor")
+        document.querySelector('.container h1').textContent = "WELCOME Adolecente";
+        inicio.textContent   =    'MENOR';
+        tutores.textContent =    'MENOR';
+        rutasGuardadas.textContent  =    'MENOR';
+        miMenor.textContent    =    'MENOR';
+    
+          // <!-- ======= Cambio de imagen de fondo ======= -->
+    
+       imgfondo.style.backgroundImage = "url('assets/img/menor2.jpg')";
 
-    //CAMBIAR COLOR
-    const heading = document.querySelector('h1');
-    heading.style.backgroundColor = 'blue';
+    // <!-- ======= Quiutar botón de registro ======= -->
 
-    // CAMBIAR IMG
+       registrate.remove('registrate');
+        
+    
+    //    //CAMBIAR COLOR
+    
+    //     const heading = document.querySelector('h1');
+    //     heading.style.backgroundColor = 'red';
+    
+    //     //CAMBIAR IMG
+    
+    //     const imagen = document.querySelector('.card img');
+    //     imagen.src = 'img/logo.jpg';
+    
+        break;
+        
+    case "3":
 
-     const imagen = document.querySelector('.card img');
-     imagen.src = 'img/newyork1.jpg';
-   
+        alert("Bienvenido a ConfiApp");
+        document.querySelector('.container h1').textContent = "WELCOME A CONFIAPP";
+        tutores.textContent = 'Nosotros';
+        tutores.href = 'nosotros.html';
+    
+        rutasGuardadas.textContent = 'Tutores';
+        rutasGuardadas.href = 'tutores.html';
+    
+        miMenor.textContent = 'Foros';
+        miMenor.href = 'foros.html';
+    
+       // <!-- ======= Cambio de imagen de fondo ======= -->
+    
+       imgfondo.style.backgroundImage = "url('assets/img/flia1.jpg')";
+    
+    
+       // <!-- ======= Cambio contenido de Registra al menor por ======= -->
+    
+       registrate.textContent = 'REGISTRATE';
 
     
-
-}
-
-// <!-- ======= Ingreso 2 - MENOR ======= -->
-
-
-if(ingreso == 2){
+        //CAMBIAR COLOR
+        // const heading = document.querySelector('h1');
+        // heading.style.backgroundColor = 'orange';
     
-    document.querySelector('.').textContent = "WELCOME MENOR";
-    console.log (navegacion.children[0].textContent = '');
-    console.log (navegacion.children[1].textContent = 'Ruta');
-    console.log (navegacion.children[2].textContent = 'Alerta');
-    console.log (navegacion.children[3].textContent = 'S.O.S');
-
-   //CAMBIAR COLOR
-
-    const heading = document.querySelector('h1');
-    heading.style.backgroundColor = 'red';
-
-    //CAMBIAR IMG
-
-    const imagen = document.querySelector('.card img');
-    imagen.src = 'img/logo.jpg';
+       //CAMBIAR IMG
+       const imagen = document.querySelector('.card img');
+       imagen.src = 'img/lupa.jpg';
 
 
+
+        break;
+
+    default:
+        break;
 }
-
-// <!-- ======= Ingreso 3 - CONFIAPP ======= -->
-
-
-if(ingreso == 3){
-
-    document.querySelector('.contenido-hero h1').textContent = "WELCOME A CONFIAPP";
-    document.querySelector('.hospedaje h2').textContent = prompt("CAMBIA Hospedaje por");
-   
-
-    //CAMBIAR COLOR
-    const heading = document.querySelector('h1');
-    heading.style.backgroundColor = 'orange';
-
-   //CAMBIAR IMG
-   const imagen = document.querySelector('.card img');
-   imagen.src = 'img/lupa.jpg';
-
 }
