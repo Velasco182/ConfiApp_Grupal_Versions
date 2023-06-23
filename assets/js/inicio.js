@@ -4,12 +4,20 @@ let user, pass;
 let nombres, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC;
 ///////Arreglo de usuario
 let usr;
-
+console.table(usr);
 //////Variables de usuario por defecto para inicio de sesión
 const usuario = 2556678;
 const contraseña = 'adso2023';
 
+/////Definicion de modales
+let registroModal, exampleModal;
+
+registroModal = document.getElementById('modalRegistro');
+exampleModal = document.getElementById('exampleModal');
+
 function validacion(){
+
+
 
 /////Asiganción de variables para modal inicio
 user = document.getElementById('inicioDocumento').value;
@@ -29,11 +37,20 @@ tYC = document.getElementById('tYC').value;
 //// || (pass == null || pass.length == 0 || /^\s+$/.test(pass))
 
 /////Validar no nulo, tamaño mayor a 0 y espacios en blanco del modal inicio
-    if( (user || pass || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC == null) || (user.length  || pass.length || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length == 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC) )) {
+    if( ( user || pass || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC == null) || (user.length  || pass.length || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length == 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) ) {
     
         console.log(user);
-        
         console.log(pass);
+
+        console.log(nombre);
+        console.log(apellido);
+        console.log(tDocumento);
+        console.log(nDocumento);
+        console.log(rol);
+        console.log(fechaN);
+        console.log(registroPassword);
+        console.log(registroConfirmarPassword);
+        console.log(tYC);
 
         return false;
   
@@ -41,21 +58,55 @@ tYC = document.getElementById('tYC').value;
         alert("Todo Ok.");
         inicio(user, pass);
         registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC);
+
         return true;
     }
 }
 
 function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC){
 
-    do{
+    // do{
 
         usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC];
 
-    }while(validacion !== false);
+    // }while(validacion !== false);
+
+    if (usr.length == 9 && registroPassword === registroConfirmarPassword){
+
+        console.table(usr);
+        alert("Registro exitoso.")
+
+        $(registroModal).modal('hide'); // cerrar
+    
+        $(exampleModal).modal('show'); ///Abrir modal
+        // window.open("Home.html#exampleModal", "_self");
+
+        // registroModal.modal('hide'); //Ocualtar modal
+        // exampleModal.modal('show');  //Mostrar Modal
+
+        // $('#exampleModal').modal('show'); // abrir
+        // registroModal.modal('hide');
+        // exampleModal.modal('show');
+
+    }else{
+
+        console.log(nombre);
+        console.log(apellido);
+        console.log(tDocumento);
+        console.log(nDocumento);
+        console.log(rol);
+        console.log(fechaN);
+        console.log(registroPassword);
+        console.log(registroConfirmarPassword);
+        console.log(tYC);
+
+    }
+
+    
 
 }
 
-function crearUsuario(usr){
+function crearUsuario(usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC]){
     
 }
 
@@ -69,6 +120,20 @@ function inicio(user, pass) {
 
     } else {
       alert("Usuario o contraseña inválido");
+      
+        $(exampleModal).modal('hide'); // cerrar
+    
+        $(registroModal).modal('show'); ///Abrir modal
+
+      //     exampleModal.addEventListener("hide.bs.modal", function () {
+    //     // Aquí va el código a ejecutar cuando se dispara el evento de cerrar la ventana modal
+    //         // exampleModal.remove();
+    //         registroModal.modal('show');
+
+    // });
+        // exampleModal.modal("hide");
+        // registroModal.modal("show");
+
         console.log(user);
         console.log(pass);
     }
