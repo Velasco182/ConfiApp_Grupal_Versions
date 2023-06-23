@@ -97,7 +97,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="Home.html">
+        <form action="Home.html" onsubmit="return comenzar(user, inicio, tutores, rutasGuardadas, miMenor, imgfondo, registrate)"> 
           <div class="mb-3">
             <label class="form-label">Tipo de documento</label>
             <select class="form-select" aria-label="Default select example" required>
@@ -123,7 +123,7 @@
           </div> -->
           <div id="centrar">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
-          <button type="submit" class="btn btn-primary" id="enviarInicio" >Ingresar</button>
+          <button type="submit" class="btn btn-primary" id="enviarInicio" onclick="location.href='javascript:comenzar(user, inicio, tutores, rutasGuardadas, miMenor, imgfondo, registrate)'">Ingresar</button>
           <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalRegistro">Regístrate</a>
         </div>
         </form>
