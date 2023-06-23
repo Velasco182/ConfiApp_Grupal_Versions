@@ -172,20 +172,20 @@
       </div>
       <div class="modal-body">
 
-        <form action="Home.html" >
+        <form action="landing.html#modal" onsubmit="return validacion()">
         <div class="mb-3">
           <label class="form-label">Nombres completos</label>
-          <input type="text" class="form-control" maxlength="20" required>
+          <input id="nombre" type="text" class="form-control" maxlength="20" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Apellidos completos</label>
-          <input type="text" class="form-control" maxlength="20" required>
+          <input id="apellido" type="text" class="form-control" maxlength="20" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Tipo de documento</label>
-          <select class="form-select" aria-label="Default select example" required>
+          <select id="tDocumento" class="form-select" aria-label="Default select example" required>
             <option value="1">Cédula de Ciudadanía</option>
             <option value="2">Cédula de Extranjería</option>
             <option value="3">Pasaporte</option>
@@ -194,12 +194,12 @@
 
         <div class="mb-3">
           <label class="form-label">Número de documento</label>
-          <input type="number" class="form-control" maxlength="10" required>
+          <input id="nDocumento" type="number" class="form-control" maxlength="10" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Rol que ocupa</label>
-          <select class="form-select" aria-label="Default select example" required>
+          <select id="rol" class="form-select" aria-label="Default select example" required>
             <option value="1">Padre de familia</option>
             <option value="2">Madre de familia</option>
             <option value="2">Tutor responsable</option>
@@ -208,12 +208,9 @@
 
         <div class="mb-3">
           <label class="form-label">Fecha de nacimiento</label>
-          <input type="date" class="form-control" max="2004-12-31" required>
+          <input id="fechaN" type="date" class="form-control" max="2004-12-31" required>
           <div id="emailHelp" class="form-text">Debes ser mayor de 18 años.</div>
         </div>
-
-
-
 
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Contraseña</label>
@@ -225,23 +222,13 @@
           <input type="password" class="form-control" id="registroConfirmarPassword" required  minlength="8">
         </div>
 
-
-
-
-
-
-
-
-
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="checkRegistro" required>
+          <input id="tYC" type="checkbox" class="form-check-input" id="checkRegistro" required>
           <label class="form-check-label" for="exampleCheck1" >Acepto todos los términos y condiciones.</label>
         </div>
 
-
-
         <div id="centrar">
-          <button type="submit" class="btn btn-primary" id="enviarRegistro">Registrarme</button>
+          <button type="submit" class="btn btn-primary" id="enviarRegistro" onclick="location.href='javascript:registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC)'">Registrarme</button>
         </div>
       </form>
       </div>
@@ -249,9 +236,6 @@
   </div>
   </div>
 <!--Aqui TERMINA  el modal de registro -->
-
-
-
 
   <main id="main">
     <p>
