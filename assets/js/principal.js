@@ -42,13 +42,13 @@ registrate = document.getElementById('registrate');
 welcome = document.getElementById('welcome');
 
 
-if(user == '2556678'){
+   if(user == 2556678 && pass == 'adso2023'){
 
        // alert("Bienvenido Tutor");
 
        window.open("Home.html", "_self");
+       console.log("Bienvenido Tutor");
 
-       console.log("Bienvenido Tutor")
        document.querySelector('.container h1').textContent = "WELCOME TUTOR";
        inicio.textContent   =    'Inicio';
        tutores.textContent =    'Tutores';
@@ -65,13 +65,13 @@ if(user == '2556678'){
 // <!-- ======= Ingreso 2 - MENOR ======= -->
 
 
-if(user == '2'){
+   else if(user == 2 && pass == '2'){
     
     // alert("Bienvenido Adolecente");
 
     window.open("Home.html", "_self");
-
     console.log("Bienvenido Menor");
+
     document.querySelector('.container h1').textContent = "WELCOME Adolecente";
 
 
@@ -125,11 +125,12 @@ console.log(user, pass);
 // <!-- ======= Ingreso 3 - CONFIAPP ======= -->
 
 
-if(user == '3'){
+else if(user == 3 && pass == '3'){
 
 
     window.open("Home.html", "_self");
     alert("Bienvenido a ConfiApp");
+
     document.querySelector('.container h1').textContent = "WELCOME A CONFIAPP";
 
 

@@ -97,7 +97,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="Home.html" onsubmit="return comenzar(user, inicio, tutores, rutasGuardadas, miMenor, imgfondo, registrate)"> 
+        <form action="Home.html" onsubmit="comenzar(user, pass)"> 
           <div class="mb-3">
             <label class="form-label">Tipo de documento</label>
             <select class="form-select" aria-label="Default select example" required>
@@ -109,12 +109,12 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Número de documento</label>
-            <input type="number" class="form-control" id="inicioDocumento" aria-describedby="emailHelp" required maxlength="10" minlength="7">
+            <input id="inicioDocumento" type="number" class="form-control" aria-describedby="emailHelp" required maxlength="10" minlength="7">
             <div id="emailHelp" class="form-text">Nunca compartiremos su información personal con nadie más.</div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="inicioContraseña"  maxlength="10" minlength="7" required>
+            <input id="inicioContrasena"  type="password" class="form-control"  maxlength="10" minlength="7" required>
           </div>
 
           <!-- <div class="mb-3 form-check">
@@ -123,7 +123,7 @@
           </div> -->
           <div id="centrar">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
-          <button type="submit" class="btn btn-primary" id="enviarInicio" onclick="location.href='javascript:comenzar(user, inicio, tutores, rutasGuardadas, miMenor, imgfondo, registrate)'">Ingresar</button>
+          <button  id="enviarInicio" type="submit" class="btn btn-primary" onclick="location.href='javascript:comenzar(user, pass)'">Ingresar</button>
           <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalRegistro">Regístrate</a>
         </div>
         </form>
