@@ -116,10 +116,10 @@
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="inicioContraseña"  maxlength="10" minlength="7" required>
           </div>
-          <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-            <label class="form-check-label" for="exampleCheck1">Verificado</label>
-          </div> -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="checkInicio" required>
+            <label class="form-check-label" for="exampleCheck1" >Recordarme</label>
+          </div>
           <div id="centrar">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> -->
            <button type="submit" class="btn btn-primary" id="enviarInicio" onclick="location.href='javascript:inicio(user, pass)'">Ingresar</button> 
@@ -229,6 +229,7 @@
 
         <div id="centrar">
           <button type="submit" class="btn btn-primary" id="enviarRegistro" onclick="location.href='javascript:registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC)'">Registrarme</button>
+          <a class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</a>
         </div>
       </form>
       </div>

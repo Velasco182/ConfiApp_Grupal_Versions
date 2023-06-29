@@ -1,5 +1,5 @@
 //////Variables de inicio de sesión 
-let user, pass;
+let user, pass, checkInicio;
 ///////Variables de regsitro
 let nombres, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC;
 ///////Arreglo de usuario
@@ -17,11 +17,10 @@ exampleModal = document.getElementById('exampleModal');
 
 function validacion(){
 
-
-
 /////Asiganción de variables para modal inicio
 user = document.getElementById('inicioDocumento').value;
 pass = document.getElementById('inicioContraseña').value;
+checkInicio = document.getElementById('checkInicio');
 
 /////////Asiganción de variables para modal Registro
 nombre = document.getElementById('nombre').value;
@@ -37,7 +36,7 @@ tYC = document.getElementById('tYC').value;
 //// || (pass == null || pass.length == 0 || /^\s+$/.test(pass))
 
 /////Validar no nulo, tamaño mayor a 0 y espacios en blanco del modal inicio
-    if( ( user || pass || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC == null) || (user.length  || pass.length || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length == 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) ) {
+    if( ( user || pass || checkInicio || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC == null) || (user.length  || pass.length || checkInicio.length  || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length == 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(checkInicio)  ||  /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) ) {
     
         console.log(user);
         console.log(pass);
@@ -65,15 +64,26 @@ tYC = document.getElementById('tYC').value;
 
 function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC){
 
+    nombre.required = true;
+    apellido.required = true;
+    tDocumento.required = true;
+    nDocumento.required = true;
+    rol.required = true;
+    fechaN.required = true;
+    registroPassword.required = true;
+    registroConfirmarPassword.required = true;
+    tYC.required = true;
+
     // do{
 
         usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC];
 
     // }while(validacion !== false);
 
-    if (usr.length == 9 && registroPassword === registroConfirmarPassword){
+    if (usr.length == 9 && registroPassword === registroConfirmarPassword && tYC === 'on'){
 
         console.table(usr);
+
         alert("Registro exitoso.")
 
         $(registroModal).modal('hide'); // cerrar
@@ -107,10 +117,16 @@ function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registr
 }
 
 function crearUsuario(usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC]){
+
+    
     
 }
 
 function inicio(user, pass) {
+
+    user.required = true;
+    pass.required = true;
+    checkInicio.required = true;
   
     if (usuario == user && contraseña == pass) {
         alert("Inicio de sesión exitoso.")
