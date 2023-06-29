@@ -58,7 +58,7 @@ tYC = document.getElementById('tYC').value;
         registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC);
 
 
-        
+
 
 
         return true;
@@ -131,40 +131,40 @@ function iniciarSesion(user, pass) {
     pass.required = true;
     checkInicio.required = true;
 
-        // Diego
-
-    // Aqui trabajaremos los cambios de los 3 perfiles con ( prompt IF / ELSE ).
-
-
-    // <!-- ======= Ingreso de número con prompt ======= -->
-
-    // let user, pass;
-    let inicios;
-    let tutores ;
-    let rutasGuardadas ;
-    let miMenor ;
-    let imgfondo ;
-    let registrate ;
-    // let welcome;
-  
-    // if (usuario == user && contraseña == pass) {
-    //     alert("Inicio de sesión exitoso.")
-        
-    //     window.open("Home.html", "_self");   
-    //     console.log(`Bienvenido ${usuario}.`);
-
-    // } 
     // Diego
 
-        // <!-- ======= Dar la condición a cada variable  ======= -->
+            // Aqui trabajaremos los cambios de los 3 perfiles con ( prompt IF / ELSE ).
 
-        inicios = document.getElementById('inicio');
-        tutores = document.getElementById('tutores');
-        rutasGuardadas = document.getElementById('rutasGuardadas');
-        miMenor = document.getElementById('miMenor');
-        imgfondo = document.getElementById('hero');
-        registrate = document.getElementById('registrate');
-        // welcome = document.getElementById('welcome');
+
+            // <!-- ======= Ingreso de número con prompt ======= -->
+
+            // let user, pass;
+            let inicios;
+            let tutores ;
+            let rutasGuardadas ;
+            let miMenor ;
+            let imgfondo ;
+            let registrate ;
+            // let welcome;
+        
+            // if (usuario == user && contraseña == pass) {
+            //     alert("Inicio de sesión exitoso.")
+                
+            //     window.open("Home.html", "_self");   
+            //     console.log(`Bienvenido ${usuario}.`);
+
+            // } 
+            // Diego
+
+                // <!-- ======= Dar la condición a cada variable  ======= -->
+
+                inicios = document.getElementById('inicio');
+                tutores = document.getElementById('tutores');
+                rutasGuardadas = document.getElementById('rutasGuardadas');
+                miMenor = document.getElementById('miMenor');
+                imgfondo = document.getElementById('hero');
+                registrate = document.getElementById('registrate');
+                // welcome = document.getElementById('welcome');
 
     switch(user){
 
