@@ -54,8 +54,11 @@ tYC = document.getElementById('tYC').value;
   
     }else{
         alert("Todo Ok.");
-        inicio(user, pass);
+        iniciarSesion(user, pass);
         registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC);
+
+
+        
 
 
         return true;
@@ -122,7 +125,7 @@ function crearUsuario(usr = [nombre, apellido, tDocumento, nDocumento, rol, fech
     
 }
 
-function inicio(user, pass) {
+function iniciarSesion(user, pass) {
 
     user.required = true;
     pass.required = true;
