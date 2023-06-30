@@ -359,7 +359,7 @@ function iniciarSesion(user, pass) {
             // <!-- ======= Ingreso 3 - CONFIAPP ======= -->
 
 
-        if(user == nDocumento && pass == registroPassword){
+        if(pass == registroPassword){
 
 
             
