@@ -1,6 +1,8 @@
 ////Intentamos solucionar los errores y no fallamos en el intento, 
 ///pero siguen sin poderse ver los cambios con DOM, mil disculpas Inge.
 ///Función registro funcionando de forma estática.
+///Iniciar ejecutando modal de inicio con argumentos validos o modal de registro directamente, luego 
+////No hacer formulario de regitro que se abre despues de ingresar argumentos invalidos en inicio para verificar funcionamiento del modal Registro en consola
 ///Script por: Diego Fernando Bolaños - Rubén Darío Velasco.
 ///Plantilla de BootStrap inicial: Juan David Cobo.
 ///ADSO - Ficha: 2556678.
@@ -294,7 +296,7 @@ function iniciarSesion(user, pass) {
                     window.open("Home.html", "_self");
             }
         break;
-        case "2":
+        case '2':
             // <!-- ======= Ingreso 2 - MENOR ======= -->
             if(pass == '22222222'){
             
