@@ -3,6 +3,11 @@
 ///Función registro funcionando de forma estática.
 ///Iniciar ejecutando modal de inicio con argumentos validos o modal de registro directamente, luego 
 ////No hacer formulario de regitro que se abre despues de ingresar argumentos invalidos en inicio para verificar funcionamiento del modal Registro en consola
+
+///Usuario tutor: usr = 2556678, pwd= adso2023
+///Usuario menor: usr = 2, pwd= 2222222222
+///Usuario registro: usr = 2556678, pwd= adso2023
+
 ///Script por: Diego Fernando Bolaños - Rubén Darío Velasco.
 ///Plantilla de BootStrap inicial: Juan David Cobo.
 ///ADSO - Ficha: 2556678.
@@ -294,11 +299,13 @@ function iniciarSesion(user, pass) {
                     console.log(user, pass);
                   //};
                     window.open("Home.html", "_self");
+            }else{
+                alert("Contraseña Incorrecta");
             }
         break;
         case '2':
             // <!-- ======= Ingreso 2 - MENOR ======= -->
-            if(pass == '22222222'){
+            if(pass == '2222222222'){
             
                 // alert("Bienvenido Adolecente");
     
@@ -354,6 +361,8 @@ function iniciarSesion(user, pass) {
                 console.log(user, pass);    
                 
     
+            }else{
+                alert("Contraseña Incorrecta");
             }
 
         break; 
@@ -407,7 +416,8 @@ function iniciarSesion(user, pass) {
         break;  
         default:
             
-            alert("Usuario o contraseña inválido");
+            if(pass.length >= 8){
+                alert("Usuario o contraseña inválido");
             
                 $(exampleModal).modal('hide'); // cerrar
             
@@ -425,6 +435,8 @@ function iniciarSesion(user, pass) {
                 console.log(user);
                 console.log(pass);
 
+            }
+            
         break; 
     }
  
