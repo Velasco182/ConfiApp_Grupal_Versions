@@ -1,9 +1,27 @@
+////Intentamos solucionar los errores y no fallamos en el intento, 
+///pero siguen sin poderse ver los cambios con DOM, mil disculpas Inge.
+///Función registro funcionando de forma estática.
+///Script por: Diego Fernando Bolaños - Rubén Darío Velasco.
+///Plantilla de BootStrap inicial: Juan David Cobo.
+///ADSO - Ficha: 2556678.
+///SENA 2023.
 //////Variables de inicio de sesión 
 let user, pass, checkInicio;
 ///////Variables de regsitro
 let nombres, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC;
 ///////Arreglo de usuario
 let usr;
+// const usr = {
+//     t_identificacion: tDocumento,
+//     n_identificacion: nDocumento,
+//     nombres: nombre,
+//     apellidos: apellido,
+//     roles: rol,
+//     edad: fechaN,
+//     contraseña: registroPassword,
+//     ccontraseña: registroConfirmarPassword,
+//     terminos: tYC,
+// }
 console.table(usr);
 //////Variables de usuario por defecto para inicio de sesión
 const usuario = 2556678;
@@ -54,12 +72,10 @@ tYC = document.getElementById('tYC').value;
   
     }else{
         alert("Todo Ok.");
+
         iniciarSesion(user, pass);
+
         registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC);
-
-
-
-
 
         return true;
     }
@@ -79,9 +95,24 @@ function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registr
 
     // do{
 
-        usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC];
+        // usr = {
+        //     t_identificacion: tDocumento,
+        //     n_identificacion: nDocumento,
+        //     nombres: nombre,
+        //     apellidos: apellido,
+        //     roles: rol,
+        //     edad: fechaN,
+        //     contraseña: registroPassword,
+        //     ccontraseña: registroConfirmarPassword,
+        //     terminos: tYC,
+        // }
 
     // }while(validacion !== false);
+    
+    ///Arreglo de Usuarios
+    usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC];
+
+    // usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC];
 
     if (usr.length == 9 && registroPassword === registroConfirmarPassword && tYC === 'on'){
 
@@ -93,6 +124,7 @@ function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registr
     
         $(exampleModal).modal('show'); ///Abrir modal
         // window.open("Home.html#exampleModal", "_self");
+        iniciarSesion(nDocumento, registroPassword);
 
         // registroModal.modal('hide'); //Ocualtar modal
         // exampleModal.modal('show');  //Mostrar Modal
@@ -119,17 +151,17 @@ function registro(nombre, apellido, tDocumento, nDocumento, rol, fechaN, registr
 
 }
 
-function crearUsuario(usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC]){
+// function crearUsuario(usr = [nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC]){
 
 
     
-}
+// }
 
 function iniciarSesion(user, pass) {
 
     user.required = true;
     pass.required = true;
-    checkInicio.required = true;
+    // checkInicio.required = true;
 
     // Diego
 
@@ -169,7 +201,7 @@ function iniciarSesion(user, pass) {
     switch(user){
 
         case '2556678':
-            if(user == '2556678' && pass == 'adso2023'){
+            if(pass == 'adso2023'){
 
                 // alert("Bienvenido Tutor");
                 //window.onload = function() {
@@ -178,12 +210,12 @@ function iniciarSesion(user, pass) {
                     console.log("Bienvenido Tutor");
             
                     document.querySelector('.container h1').textContent = "WELCOME TUTOR";
-                    inicios.textContent   =    'Inicio';
-                    tutores.textContent =    'Tutores';
-                    rutasGuardadas.textContent  =    'Rutas guardadas';
-                    miMenor.textContent    =    'Menor a cargo';
+                    $(inicios).textContent   =    'Inicio';
+                    $(tutores).textContent =    'Tutores';
+                    $(rutasGuardadas).textContent  =    'Rutas guardadas';
+                    $(miMenor).textContent    =    'Menor a cargo';
                 
-                    registrate.remove('registrate');
+                    $(registrate).remove('registrate');
                 
             
                     console.log(user, pass);
@@ -193,7 +225,7 @@ function iniciarSesion(user, pass) {
         break;
         case '2':
             // <!-- ======= Ingreso 2 - MENOR ======= -->
-            if(user == '2' && pass == '22222222'){
+            if(pass == '22222222'){
             
                 // alert("Bienvenido Adolecente");
     
@@ -201,22 +233,22 @@ function iniciarSesion(user, pass) {
                 console.log("Bienvenido Menor");
                 document.querySelector('.container h1').textContent = "WELCOME Adolecente";
     
-    
-                // Cambiar el menú para cada página
 
+                // Cambiar el menú para cada página
+                window.open("Home.html", "_self");
                 //const ruta =  'Ruta activa';
     
-                inicios.textContent   =  'Ruta activa';
-                tutores.textContent =    'Mensajes';
-                rutasGuardadas.textContent  =    'Rutas';
-                miMenor.textContent    =    'Mi ruta activa';
+                $(inicios).textContent   =  'Ruta activa';
+                $(tutores).textContent =    'Mensajes';
+                $(rutasGuardadas).textContent  =    'Rutas';
+                $(miMenor).textContent    =    'Mi ruta activa';
     
                 // Cambiar el redirigimiento de las páginas
     
-                inicios.href   =    '';
-                tutores.href = 'https://messages.google.com/intl/es-419/';
-                rutasGuardadas.href = 'https://www.waze.com/es-419/live-map/';
-                miMenor.href = 'https://eldiariony.com/2014/10/30/ensena-a-los-pequenos-a-cuidarse-en-la-calle/';
+                $(inicios).href   =    '';
+                $(tutores).href = 'https://messages.google.com/intl/es-419/';
+                $(rutasGuardadas).href = 'https://www.waze.com/es-419/live-map/';
+                $(miMenor).href = 'https://eldiariony.com/2014/10/30/ensena-a-los-pequenos-a-cuidarse-en-la-calle/';
     
     
                 // Colocar una simulación de ruta activa, reemplazando imagen de presentación
@@ -228,12 +260,12 @@ function iniciarSesion(user, pass) {
     
     
                     // <!-- ======= Cambio de imagen de fondo ======= -->
-                imgfondo.style.backgroundImage = "url('assets/img/menor2.jpg')";
+                $(imgfondo).css('backgroundImage', 'url("assets/img/Familia.jpg")');
         
         
                 // <!-- ======= Quiutar botón de registro ======= -->
         
-                registrate.remove('registrate');
+                $(registrate).remove('registrate');
                     
         
                 //    //CAMBIAR COLOR
@@ -247,16 +279,16 @@ function iniciarSesion(user, pass) {
                 //     imagen.src = 'img/logo.jpg';
         
                 console.log(user, pass);    
-                window.open("Home.html", "_self");
+                
     
             }
 
         break; 
-        case '3':
+        case nDocumento:
             // <!-- ======= Ingreso 3 - CONFIAPP ======= -->
 
 
-        if(user == '3' && pass == '33333333'){
+        if(user == nDocumento && pass == registroPassword){
 
 
             
@@ -267,25 +299,25 @@ function iniciarSesion(user, pass) {
 
             // Cambiar el menú para cada página
 
-            tutores.textContent = 'Nosotros';
-            rutasGuardadas.textContent = 'Tutores';
-            miMenor.textContent = 'Foros';
+            $(tutores).textContent = 'Nosotros';
+            $(rutasGuardadas).textContent = 'Tutores';
+            $(miMenor).textContent = 'Foros';
 
 
             // Cambiar el redirigimiento de las páginas
 
-            tutores.href = '';
-            rutasGuardadas.href = '';
-            miMenor.href = '';
+            $(tutores).href = '';
+            $(rutasGuardadas).href = '';
+            $(miMenor).href = '';
 
             // <!-- ======= Cambio de imagen de fondo ======= -->
 
-            imgfondo.style.backgroundImage = "url('assets/img/flia1.jpg')";
+            $(imgfondo).css('backgroundImage', 'url("assets/img/familia1.jpg")');
 
 
             // <!-- ======= Cambio contenido de Registra al menor por ======= -->
 
-            registrate.textContent = 'REGISTRATE';
+            $(registrate).textContent = 'REGISTRATE';
 
 
                 //CAMBIAR COLOR
@@ -301,7 +333,7 @@ function iniciarSesion(user, pass) {
         }
         break;  
         default:
-
+            
             alert("Usuario o contraseña inválido");
             
                 $(exampleModal).modal('hide'); // cerrar
