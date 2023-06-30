@@ -8,7 +8,7 @@
 //////Variables de inicio de sesión 
 let user, pass, checkInicio;
 ///////Variables de regsitro
-let nombres, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC;
+let nombre, apellido, tDocumento, nDocumento, rol, fechaN, registroPassword, registroConfirmarPassword, tYC;
 ///////Arreglo de usuario
 let usr;
 // const usr = {
@@ -32,14 +32,41 @@ let registroModal, exampleModal;
 registroModal = document.getElementById('modalRegistro');
 exampleModal = document.getElementById('exampleModal');
 
-function validacion(){
+// Aqui trabajaremos los cambios de los 3 perfiles con ( prompt IF / ELSE ).
 
-/////Asiganción de variables para modal inicio
+
+            // <!-- ======= Ingreso de número con prompt ======= -->
+
+            // let user, pass;
+            let inicios;
+            let tutores ;
+            let rutasGuardadas ;
+            let miMenor ;
+            let imgfondo ;
+            let registrate ;
+            // let welcome;
+
+function validacion(){
+    // let user = document.getElementById('inicioDocumento').value;
+    // let pass = document.getElementById('inicioContraseña').value;
+    // let checkInicio = document.getElementById('checkInicio').checked;
+
+    // let nombre = document.getElementById('nombre').value;
+    // let apellido = document.getElementById('apellido').value;
+    // let tDocumento = document.getElementById('tDocumento').value;
+    // let nDocumento = document.getElementById('nDocumento').value;
+    // let rol = document.getElementById('rol').value;
+    // let fechaN = document.getElementById('fechaN').value;
+    // let registroPassword = document.getElementById('registroPassword').value;
+    // let registroConfirmarPassword = document.getElementById('registroConfirmarPassword').value;
+    // let tYC = document.getElementById('tYC').value;
+
+///Asiganción de variables para modal inicio
 user = document.getElementById('inicioDocumento').value;
 pass = document.getElementById('inicioContraseña').value;
 checkInicio = document.getElementById('checkInicio');
 
-/////////Asiganción de variables para modal Registro
+///////Asiganción de variables para modal Registro
 nombre = document.getElementById('nombre').value;
 apellido = document.getElementById('apellido').value;
 tDocumento = document.getElementById('tDocumento').value;
@@ -50,10 +77,68 @@ registroPassword = document.getElementById('registroPassword').value;
 registroConfirmarPassword = document.getElementById('registroConfirmarPassword').value;
 tYC = document.getElementById('tYC').value;
 
+    // document.getElementById('inicioDocumento').value = user;
+    // document.getElementById('inicioContraseña').value = pass;
+    // document.getElementById('checkInicio').checked = checkInicio;
+
+    // document.getElementById('nombre').value = nombre;
+    // document.getElementById('apellido').value = apellido;
+    // document.getElementById('tDocumento').value = tDocumento;
+    // document.getElementById('nDocumento').value = nDocumento;
+    // document.getElementById('rol').value = rol;
+    // document.getElementById('fechaN').value = fechaN;
+    // document.getElementById('registroPassword').value = registroPassword;
+    // document.getElementById('registroConfirmarPassword').value = registroConfirmarPassword;
+    // document.getElementById('tYC').value = tYC;
+
 //// || (pass == null || pass.length == 0 || /^\s+$/.test(pass))
 
 /////Validar no nulo, tamaño mayor a 0 y espacios en blanco del modal inicio
-    if( ( user || pass || checkInicio || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC == null) || (user.length  || pass.length || checkInicio.length  || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length == 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(checkInicio)  ||  /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) ) {
+
+// if( ( user || pass || checkInicio || nombre || apellido || tDocumento || nDocumento || rol || fechaN || registroPassword || registroConfirmarPassword || tYC === null) || (user.length  || pass.length || checkInicio.length  || nombre.length || apellido.length || tDocumento.length || nDocumento.length || rol.length || fechaN.length || registroPassword.length || registroConfirmarPassword.length || tYC.length === 0) || (/^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(checkInicio)  ||  /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) || /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) )
+
+if (
+    user === null ||
+    pass === null ||
+    nombre === null ||
+    apellido === null ||
+    tDocumento === null ||
+    nDocumento === null ||
+    rol === null ||
+    fechaN === null ||
+    registroPassword === null ||
+    registroConfirmarPassword === null ||
+    tYC === null ||
+    user.length === 0 ||
+    pass.length === 0 ||
+    nombre.length === 0 ||
+    apellido.length === 0 ||
+    tDocumento.length === 0 ||
+    nDocumento.length === 0 ||
+    rol.length === 0 ||
+    fechaN.length === 0 ||
+    registroPassword.length === 0 ||
+    registroConfirmarPassword.length === 0 ||
+    tYC.length === 0 ||
+    /^\s+$/.test(user) ||
+    /^\s+$/.test(pass) ||
+    /^\s+$/.test(nombre) ||
+    /^\s+$/.test(apellido) ||
+    /^\s+$/.test(tDocumento) ||
+    /^\s+$/.test(nDocumento) ||
+    /^\s+$/.test(rol) ||
+    /^\s+$/.test(fechaN) ||
+    /^\s+$/.test(registroPassword) ||
+    /^\s+$/.test(registroConfirmarPassword) ||
+    /^\s+$/.test(tYC)
+  )
+
+// if (!user || !pass || !checkInicio || !nombre || !apellido || !tDocumento || !nDocumento || !rol || !fechaN || !registroPassword || !registroConfirmarPassword || !tYC ||
+//     user.length === 0 || pass.length === 0 || checkInicio.length === 0 || nombre.length === 0 || apellido.length === 0 || tDocumento.length === 0 || nDocumento.length === 0 ||
+//     rol.length === 0 || fechaN.length === 0 || registroPassword.length === 0 || registroConfirmarPassword.length === 0 || tYC.length === 0 ||
+//     /^\s+$/.test(user) || /^\s+$/.test(pass) || /^\s+$/.test(checkInicio) || /^\s+$/.test(nombre) || /^\s+$/.test(apellido) || /^\s+$/.test(tDocumento) ||
+//     /^\s+$/.test(nDocumento) || /^\s+$/.test(rol) || /^\s+$/.test(fechaN) || /^\s+$/.test(registroPassword) || /^\s+$/.test(registroConfirmarPassword) || /^\s+$/.test(tYC)) 
+{
     
         console.log(user);
         console.log(pass);
@@ -163,21 +248,18 @@ function iniciarSesion(user, pass) {
     pass.required = true;
     // checkInicio.required = true;
 
+                    // <!-- ======= Dar la condición a cada variable  ======= -->
+
+                    // inicios = document.querySelector('.inicio');
+                    // tutores = document.querySelector('.tutores');
+                    // rutasGuardadas = document.querySelector('.rutasGuardadas');
+                    // miMenor = document.querySelector('.miMenor');
+                    // imgfondo = document.querySelector('hero');
+                    // registrate = document.querySelector('.registrate');
+                    // welcome = document.getElementById('welcome');    
+    
+
     // Diego
-
-            // Aqui trabajaremos los cambios de los 3 perfiles con ( prompt IF / ELSE ).
-
-
-            // <!-- ======= Ingreso de número con prompt ======= -->
-
-            // let user, pass;
-            let inicios;
-            let tutores ;
-            let rutasGuardadas ;
-            let miMenor ;
-            let imgfondo ;
-            let registrate ;
-            // let welcome;
         
             // if (usuario == user && contraseña == pass) {
             //     alert("Inicio de sesión exitoso.")
@@ -187,16 +269,6 @@ function iniciarSesion(user, pass) {
 
             // } 
             // Diego
-
-                // <!-- ======= Dar la condición a cada variable  ======= -->
-
-                inicios = document.getElementById('inicio');
-                tutores = document.getElementById('tutores');
-                rutasGuardadas = document.getElementById('rutasGuardadas');
-                miMenor = document.getElementById('miMenor');
-                imgfondo = document.getElementById('hero');
-                registrate = document.getElementById('registrate');
-                // welcome = document.getElementById('welcome');
 
     switch(user){
 
@@ -208,7 +280,6 @@ function iniciarSesion(user, pass) {
                     // Tu código aquí
                     
                     console.log("Bienvenido Tutor");
-            
                     document.querySelector('.container h1').textContent = "WELCOME TUTOR";
                     $(inicios).textContent   =    'Inicio';
                     $(tutores).textContent =    'Tutores';
@@ -223,7 +294,7 @@ function iniciarSesion(user, pass) {
                     window.open("Home.html", "_self");
             }
         break;
-        case '2':
+        case "2":
             // <!-- ======= Ingreso 2 - MENOR ======= -->
             if(pass == '22222222'){
             
@@ -357,3 +428,4 @@ function iniciarSesion(user, pass) {
  
     
 }
+// });
