@@ -6,7 +6,8 @@
 
 ///Usuario tutor: usr = 2556678, pwd= adso2023
 ///Usuario menor: usr = 2, pwd= 2222222222
-///Usuario registro: usr = 2556678, pwd= adso2023
+///Usuario admin: usr = 3, pwd= 3333333333
+///Usuario registro: automático
 
 ///Script por: Diego Fernando Bolaños - Rubén Darío Velasco.
 ///Plantilla de BootStrap inicial: Juan David Cobo.
@@ -282,7 +283,7 @@ function iniciarSesion(user, pass) {
         case '2556678':
             if(pass == 'adso2023'){
 
-                // alert("Bienvenido Tutor");
+                alert("Bienvenido Tutor");
                 //window.onload = function() {
                     // Tu código aquí
                     
@@ -307,7 +308,7 @@ function iniciarSesion(user, pass) {
             // <!-- ======= Ingreso 2 - MENOR ======= -->
             if(pass == '2222222222'){
             
-                // alert("Bienvenido Adolecente");
+                alert("Bienvenido Adolecente");
     
                 
                 console.log("Bienvenido Menor");
@@ -366,15 +367,63 @@ function iniciarSesion(user, pass) {
             }
 
         break; 
-        case nDocumento:
+        case '3':
             // <!-- ======= Ingreso 3 - CONFIAPP ======= -->
+
+
+        if(pass == '3333333333'){
+
+
+            
+            alert("Bienvenido Administrador a ConfiApp");
+
+            document.querySelector('.container h1').textContent = "WELCOME A CONFIAPP";
+
+
+            // Cambiar el menú para cada página
+
+            $(tutores).textContent = 'Nosotros';
+            $(rutasGuardadas).textContent = 'Tutores';
+            $(miMenor).textContent = 'Foros';
+
+
+            // Cambiar el redirigimiento de las páginas
+
+            $(tutores).href = '';
+            $(rutasGuardadas).href = '';
+            $(miMenor).href = '';
+
+            // <!-- ======= Cambio de imagen de fondo ======= -->
+
+            $(imgfondo).css('backgroundImage', 'url("assets/img/familia1.jpg")');
+
+
+            // <!-- ======= Cambio contenido de Registra al menor por ======= -->
+
+            $(registrate).textContent = 'REGISTRATE';
+
+
+                //CAMBIAR COLOR
+                // const heading = document.querySelector('h1');
+                // heading.style.backgroundColor = 'orange';
+
+            //CAMBIAR IMG
+            //    const imagen = document.querySelector('.card img');
+            //    imagen.src = 'img/lupa.jpg';
+
+            console.log(user, pass);    
+            window.open("Home.html", "_self");
+        }
+        break;  
+        case nDocumento:
+            // <!-- ======= Ingreso 4 - CONFIAPP ======= -->
 
 
         if(pass == registroPassword){
 
 
             
-            alert("Bienvenido a ConfiApp");
+            alert("Bienvenido usuario nuevo a ConfiApp");
 
             document.querySelector('.container h1').textContent = "WELCOME A CONFIAPP";
 
